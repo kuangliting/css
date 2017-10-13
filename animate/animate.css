@@ -1,0 +1,34 @@
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes enter {
+     0%{transform: translate(30px,30px) }
+     50%{transform: translate(0px,0px) }
+}
+.enter{
+    animation-name:enter;
+}@keyframes enterbottom {
+     0%{transform: translate(0px,60px) }
+     50%{transform: translate(0px,0px) }
+}
+.enterbottom{
+    animation-name:enterbottom;
+    animation-duration: .4s
+    animation-timing-function: ease-out;
+}@keyframes centeropen {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.centeropen{
+    animation-name: centeropen;
+}

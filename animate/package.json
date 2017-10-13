@@ -1,0 +1,16 @@
+{
+  "name": "css.animate",
+  "version": "1.0.0",
+  "description": "项目常用动画效果",
+  "main": "animate.min.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "animate",
+    "html"
+  ],
+  "author": "kuangliting",
+  "license": "MIT"
+}

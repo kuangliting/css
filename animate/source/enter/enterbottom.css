@@ -1,0 +1,9 @@
+@keyframes enterbottom {
+     0%{transform: translate(0px,60px) }
+     50%{transform: translate(0px,0px) }
+}
+.enterbottom{
+    animation-name:enterbottom;
+    animation-duration: .4s
+    animation-timing-function: ease-out;
+}

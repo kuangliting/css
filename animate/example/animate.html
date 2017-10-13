@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        @keyframes init {
+            0%{
+                transform: scale(0.2);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+        .btn{
+            height:100px;
+            width:100px;
+            position: absolute;
+            border-radius:50%;
+            animation: open 1s infinite;
+            background-color: #fff;
+            opacity: 0;
+        }
+        .p0{
+            left:300px;
+            top:200px;
+        }
+        .p1{
+            left:350px;
+            top:200px;
+        }
+        .p2{
+            left:300px;
+            top:250px;
+        }
+        .p3{
+            left:350px;
+            top:250px;
+        }
+        .mousediv{
+            width:100px;
+            height:100px;
+            background-color: #fff;
+            border-radius:50%;
+            position: fixed;
+            opacity:0;
+        }
+
+        .animate{
+            animation-timing-function: ease-out;
+            animation-name: open;
+            animation-duration: .6s ;
+            /*animation-fill-mode: both;*/
+        }
+        @keyframes open{
+            0%{
+                opacity:.5;
+                transform: scale(0);
+            }
+            100%{
+                opacity:0;
+                transform: scale(1);
+            }
+        }
+        .demo{
+            height:600px;
+            background-color:#aaa ;
+        }
+    </style>
+</head>
+
+<body>
+<div class="demo">
+    <div class="btn p0"></div>
+    <div class="btn p1"></div>
+    <div class="btn p2"></div>
+    <div class="btn p3"></div>
+</div>
+
+</body>
+
+<script>
+    var p=document.createElement("div");
+    p.setAttribute("class","mousediv")
+    document.querySelector("body").appendChild(p);
+    function mas(p,e,n) {
+        var left=e.pageX-n;
+        var top=e.pageY-n;
+        p.style.left=left+"px";
+        p.style.top=top+"px";
+    }
+    document.addEventListener("mousemove",function(e){
+        mas(p,e,50);
+    })
+    document.addEventListener("mousedown",function(e){
+        p.setAttribute("class","mousediv animate");
+    })
+    document.addEventListener("mouseup",function(e){
+        p.setAttribute("class","mousediv");
+    })
+
+</script>
+</html>
