@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes carousel {
+        0% {
+          transform: translateY(0%);
+        }
+        5% {
+          transform: translateY(20%);
+        }
+        25% {
+          transform: translateY(20%);
+        }
+        30% {
+          transform: translateY(40%);
+        }
+        50% {
+          transform: translateY(40%);
+        }
+        55% {
+          transform: translateY(60%);
+        }
+        75% {
+          transform: translateY(60%);
+        }
+        80% {
+          transform: translateY(80%);
+        }
+        100% {
+          transform: translateY(80%);
+        }
+      }
+      .carousel {
+        width: 200px;
+        height: 100px;
+        margin: 50px auto;
+        overflow: hidden;
+        position: relative;
+      }
+      .car_wrap {
+        animation: carousel 12s ease-out infinite;
+        animation-delay: 3s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      .page {
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        color: #fff;
+      }
+      .p1 {
+        background-color: rgb(19, 16, 173);
+      }
+      .p2 {
+        background-color: green;
+      }
+      .p3 {
+        background-color: orchid;
+      }
+      .p4 {
+        background-color: orange;
+      }
+      .p5 {
+        background-color: rgb(19, 16, 173);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <div class="car_wrap">
+        <div class="page p1">第一页</div>
+        <div class="page p2">第二页</div>
+        <div class="page p3">第三页</div>
+        <div class="page p4">第四页</div>
+        <div class="page p5">第一页</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      (function () {
+        let option = {
+          width: "300px",
+          height: "100px",
+        };
+        function codeGenerator(option) {}
+        function cssGenerator(childNum, pos) {
+          const POS_TYPE = [
+            "left-right",
+            "right-left",
+            "top-bottom",
+            "bottom-top",
+          ];
+          if (typeof pos === "number") {
+            pos = POS_TYPE[pos] || POS_TYPE[0];
+          }
+        }
+        function getCode(num, type, change) {
+          function getTransform(type, value) {
+            type=type%4;
+            return [
+              `transform:translateX(${value}%);`,
+              `transform:translateX(-${value}%);`,
+              `transform:translateY(${value}%);`,
+              `transform:translateY(-${value}%);`,
+            ][type];
+          }
+
+          let sum = num + 1;
+          let intelTime = 100 / num;
+          let changeTime = intelTime * change;
+          let code = "";
+          while (num--) {
+            let value = ((num + 1) * 100) / sum;
+            code =
+              `${intelTime * num + changeTime}%,${intelTime * (num + 1)}%{
+       ${getTransform(type, value)}
+    }` + code;       
+          }
+          
+          if (type == 2 || type == 3) {
+            code =
+              ` 0%{
+        transform:translateY(0%);
+    }` + code;
+          } else {
+            code =
+              ` 0%{
+        transform:translateX(0%);
+    }` + code;
+          }
+          return `@keyframes carousel { 
+   ${code}
+}`;
+        }
+
+        console.log(getCode(4, 0, 0.2));
+      })();
+    </script>
+  </body>
+</html>
